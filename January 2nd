@@ -1,0 +1,30 @@
+//Java
+//2125. Number of Laser Beams in a Bank
+//Medium
+
+class Solution {
+    public int numberOfBeams(String[] bank) {
+        int solution = 0; // to be returned
+        int prevsum = 0; //For memory
+        int count = 0;  //To count 1s
+        for(int i = 0; i < bank.length; i++){
+            count = 0;
+            for(int j=0; j < bank[i].length(); j++){
+             if(bank[i].substring(j,j+1).equals("1")){
+
+                count++;}
+            }
+            if(prevsum == 0){
+                
+                    prevsum = count;
+            }
+            else if(count > 0 ){
+                solution += prevsum * count;
+                prevsum = count;
+            }
+            }
+        return solution;
+
+
+    }
+}
