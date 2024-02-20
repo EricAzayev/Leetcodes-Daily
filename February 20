@@ -1,0 +1,21 @@
+
+**
+Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+Runtime
+Beats 100.00% of users with Java
+
+Memory
+44.99MB
+Beats 85.35% of users with Java
+**
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        int sums = (nums.length * (nums.length + 1)) / 2;
+        int sum = 0;
+        for(int num: nums){
+            sum+= num;
+        }
+        return sums - sum;
+    }
+}
