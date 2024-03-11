@@ -1,0 +1,25 @@
+
+//37% runtime & 87.76% memory
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x < 0)return false;
+        String y = Integer.toString(x);
+        x = y.length();
+        for(int i = 0; i < x/2;i++){
+
+            if(y.charAt(i) != y.charAt(x - i - 1)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+//Kolmogorov complexity 
+class Solution {
+    public boolean isPalindrome(int x) {
+        String g = Integer.toString(x);
+        StringBuilder y = new StringBuilder(g);
+        return y.toString().equals(y.reverse().toString());
+    }
+}
